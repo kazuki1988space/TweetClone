@@ -1,0 +1,30 @@
+<div class="mainContainer">
+  <div class="pageTitle tweetIndex">ツイート一覧</div>
+
+  <div class="container tweetIndex">
+    <div class="row">
+      <% @tweets.each do |tweet| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="post-preview">
+            <div class="tweet-container">
+              <div class="tweet-content"><%= tweet.content %></div>
+              <div class="tweet-links">
+                <ul>
+                  <li><%= link_to "詳細", tweet_path(tweet.id), class: 'btn btn-default' %></li>
+                    <li><%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-info' %></li>
+                    <li><%= link_to "削除", tweet_path(tweet.id), method: :delete,
+                     data: { confirm: '削除していいですか？' }, class: 'btn btn-danger' %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="page-link toNewTweet">
+  <%= link_to "新しく投稿する", new_tweet_path, class: 'btn btn-warning' %>
+  </div>
+
+</div>

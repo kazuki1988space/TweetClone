@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+}
+
+li{
+  list-style-type: none;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: #EFEFFF;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  position: relative;
+}
+
+header{
+  width: 100%;
+}
+
+header .navbar.navbar-default{
+  margin: 0;
+  background-color: YellowGreen;
+  border: none;
+}
+
+header .navbar-header .navbar-brand{
+  float: left;
+  font-size: 22px;
+  color: WhiteSmoke;
+}
+
+header .navbar-collapse{
+  float: right;
+}
+
+header .navbar-collapse ul li .topright_bar{
+  color: WhiteSmoke;
+}
+
+.mainContaier.top{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  background-image: url('../assets/nature.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.mainContaier.top .topPage.title{
+  position: absolute;
+  top: 170px;
+  left: 0;
+  right: 0;
+  font-size: 42px;
+  font-weight: bold;
+  color: WhiteSmoke;
+}
+
+.mainContaier.top .topPage.sub-title{
+  position: absolute;
+  top: 220px;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  color: WhiteSmoke;
+}
+
+.mainContaier.top .page-link{
+  position: absolute;
+  bottom: 130px;
+  left: 0;
+  right: 0;
+}
+
+.btn{
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+footer{
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  background-color: YellowGreen;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p{
+  color: WhiteSmoke;
+  font-size: 14px;
+}

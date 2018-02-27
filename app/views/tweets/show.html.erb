@@ -1,0 +1,10 @@
+<div class="mainContainer">
+  <div class="pageTitle tweetShow">投稿詳細</div>
+  <div class="container tweetShow">
+      <div class="tweetShow-content"><%= @tweet.content %></div>
+  </div>
+
+  <div class="page-link toTweetIndex">
+  <%= link_to "投稿一覧へ戻る", tweets_path, class: 'btn btn-default'  %>
+  </div>
+</div>

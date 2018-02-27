@@ -1,0 +1,35 @@
+<div class="form submit newTweet">
+  <%= form_with(model: @tweet, url: choose_new_or_edit, local: true) do |form| %>
+
+  <% if @tweet.errors.any? %>
+  <div class="error_explanation">
+      <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
+      <ul>
+          <% @tweet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+      </ul>
+  </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <th><%= form.label :ツイート %></th>
+      <td><%= form.text_area :content %></td>
+    </tr>
+  </table>
+
+  <div class="page-link toConfirmTweet">
+  <% if choose_new_or_edit == confirm_tweets_path %>
+    <%= form.submit "作成", class: 'btn btn-warning' %>
+  <% else %>
+    <%= form.submit "編集", class: 'btn btn-warning' %>
+  <% end %>
+  </div>
+
+  <% end %>
+</div>
+
+<div class="page-link toTweetIndex">
+<%= link_to "ブログ一覧へ戻る", tweets_path, class: 'btn btn-default' %>
+</div>
