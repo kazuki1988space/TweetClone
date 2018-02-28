@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_params, only:[:show, :edit, :destory, :update]
+  before_action :set_params, only:[:show, :edit, :destroy, :update]
 
   def index
     @tweets = Tweet.all
@@ -38,11 +38,12 @@ class TweetsController < ApplicationController
 
   def confirm
     @tweet = Tweet.new(tweet_params)
+    render :new if @tweet.invalid?
   end
 
   def destroy
-    @tweet.destory
-    redirect_to tweet_path, notice: "ツイートを削除しました"
+    @tweet.destroy
+    redirect_to tweets_path, notice: "ツイートを削除しました"
   end
 
   private
